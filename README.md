@@ -154,6 +154,7 @@ type OmitThisParameter<T> = unknown extends ThisParameterType<T> ? T : T extends
 
 유의: 이 타입은 `--strictFunctionTypes`가 활성화되었을 때만 올바르게 동작합니다. [#32964](https://github.com/microsoft/TypeScript/issues/32964) 참고하세요.
 
+<br />
 
 ### `ThisType<T>`
 
