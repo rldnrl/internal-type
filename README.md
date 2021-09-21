@@ -132,7 +132,7 @@ type InstanceType<
 
 <br />
 
-### `ThisParameterType`
+### `ThisParameterType<T>`
 
 ```tsx
 type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U : unknown
@@ -144,7 +144,7 @@ type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U
 
 <br />
 
-### `OmitThisParameter`
+### `OmitThisParameter<T>`
 
 ```tsx
 type OmitThisParameter<T> = unknown extends ThisParameterType<T> ? T : T extends (...args: infer A) => infer R ? (...args: A) => R : T
