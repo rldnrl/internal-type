@@ -7,12 +7,10 @@ type User = {
 };
 
 const readonlyUser: MyReadonly<User> = {
-  firstName: "David",
+  firstName: "Mark",
   lastName: "Thomas",
   age: 25,
 };
 
 // !Error. Cannot assign to 'firstName' because it is a read-only property
 // readonlyUser.firstName = "Test First Name"
-// readonlyUser.lastName = "Test Last Name"
-// readonlyUser.age = 10
