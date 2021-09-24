@@ -1,13 +1,13 @@
-type MyRequired<T> = { [P in keyof T]-?: T[P]; }
+type MyRequired<T> = { [P in keyof T]-?: T[P] };
 
 type User = {
-  firstName?: string
-  lastName?: string
-  age?: number
-}
+  firstName?: string;
+  lastName?: string;
+  age?: number;
+};
 
 const requiredUser: MyRequired<User> = {
-  firstName: "David",
+  firstName: "Mark",
   lastName: "Thomas",
-  age: 23
-}
+  age: 23,
+};
