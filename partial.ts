@@ -1,4 +1,4 @@
-type Partial<T> = { [P in keyof T]?: T[P]; }
+type MyPartial<T> = { [P in keyof T]?: T[P]; }
 
 type User = {
   firstName: string
@@ -6,7 +6,7 @@ type User = {
   age: number
 }
 
-const partialUser: Partial<User> = {
+const partialUser: MyPartial<User> = {
   firstName: "David",
   lastName: "Thomas",
   age: 25
@@ -17,6 +17,6 @@ type Product = {
   description: string
 }
 
-const product: Partial<Product> = {
+const product: MyPartial<Product> = {
   price: 120000
 }
