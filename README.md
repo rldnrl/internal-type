@@ -30,7 +30,7 @@ type Readonly<T> = { readonly [P in keyof T]: T[P]; }
 
 <br />
 
-### `Record<K,T>`
+### `Record<K, T>`
 
 ```tsx
 type Record<K extends string | number | symbol, T> = { [P in K]: T; }
@@ -40,7 +40,7 @@ type Record<K extends string | number | symbol, T> = { [P in K]: T; }
 
 <br />
 
-### `Pick<T,K>`
+### `Pick<T, K>`
 
 ```tsx
 type Pick<T, K extends keyof T> = { [P in K]: T[P]; }
@@ -50,17 +50,7 @@ type Pick<T, K extends keyof T> = { [P in K]: T[P]; }
 
 <br />
 
-### `Omit<T,K>`
-
-```tsx
-type Omit<T, K extends string | number | symbol> = { [P in Exclude<keyof T, K>]: T[P]; }
-```
-
-`T`에서 모든 프로퍼티를 선택한 다음 `K`를 제거한 타입을 구성한다.
-
-<br />
-
-### `Exclude<T,U>`
+### `Exclude<T, U>`
 
 ```tsx
 type Exclude<T, U> = T extends U ? never : T
@@ -70,7 +60,22 @@ type Exclude<T, U> = T extends U ? never : T
 
 <br />
 
-### `Extract<T,U>`
+### `Omit<T, K>`
+
+```tsx
+type MyOmit<T, K extends string | number | symbol> = {
+  [P in Exclude<keyof T, K>]: T[P];
+};
+```
+
+`T`에서 모든 프로퍼티를 선택한 다음 `K`를 제거한 타입을 구성한다.
+
+<br />
+
+### `Extract<T, U>`
+```tsx
+type Extract<T, U> = T extends U ? T : never
+```
 
 T에서 U에 할당 할 수 있는 모든 속성을 추출하여 타입을 구성한다.
 
