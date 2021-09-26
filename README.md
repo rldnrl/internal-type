@@ -125,8 +125,6 @@ type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => i
 
 함수 `T`의 반환 타입으로 구성된 타입을 만든다.
 
-예제 (Example)
-
 <br />
 
 ### `InstanceType<T>`
