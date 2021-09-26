@@ -63,7 +63,7 @@ type Exclude<T, U> = T extends U ? never : T
 ### `Omit<T, K>`
 
 ```tsx
-type MyOmit<T, K extends string | number | symbol> = {
+type Omit<T, K extends string | number | symbol> = {
   [P in Exclude<keyof T, K>]: T[P];
 };
 ```
@@ -94,7 +94,11 @@ type NonNullable<T> = T extends null ? never : T
 ### `Parameters<T>`
 
 ```tsx
-type Parameters<T extends (...args: any) => any> = T extends (...args: infer P) => any ? P : never
+type Parameters<T extends (...args: any) => any> = T extends (
+  ...args: infer P
+) => any
+  ? P
+  : never;
 ```
 
 함수 타입 `T`의 매개변수 타입들의 튜플 타입을 구성한다.
