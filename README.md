@@ -109,6 +109,20 @@ type Parameters<T extends (...args: any) => any> = T extends (
 
 <br />
 
+### `ReturnType<T>`
+
+```tsx
+type MyReturnType<T extends (...args: any) => any> = T extends (
+  ...args: any
+) => infer R
+  ? R
+  : any;
+```
+
+함수 `T`의 반환 타입으로 구성된 타입을 만든다.
+
+<br />
+
 ### `ConstructorParameters<T>`
 
 ```tsx
@@ -119,15 +133,6 @@ type ConstructorParameters<
 
 `ConstructorParameters<T>` 타입은 생성자 함수 타입의 모든 매개변수 타입을 추출할 수 있게 해준다. 모든 매개변수 타입을 가지는 튜플 타입(`T`가 함수가 아닌 경우 `never`)을 생성한다.
 
-<br />
-
-### `ReturnType<T>`
-
-```tsx
-type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any
-```
-
-함수 `T`의 반환 타입으로 구성된 타입을 만든다.
 
 <br />
 
