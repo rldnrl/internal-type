@@ -151,7 +151,9 @@ type InstanceType<
 ### `ThisParameterType<T>`
 
 ```tsx
-type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U : unknown
+type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any
+  ? U
+  : unknown;
 ```
 
 함수 타입의 `this` 매개변수의 타입, 혹은 함수 타입에 `this` 매개변수가 없을 경우 `unknown`을 추출한다.
@@ -163,7 +165,11 @@ type ThisParameterType<T> = T extends (this: infer U, ...args: any[]) => any ? U
 ### `OmitThisParameter<T>`
 
 ```tsx
-type OmitThisParameter<T> = unknown extends ThisParameterType<T> ? T : T extends (...args: infer A) => infer R ? (...args: A) => R : T
+type OmitThisParameter<T> = unknown extends ThisParameterType<T>
+  ? T
+  : T extends (...args: infer A) => infer R
+  ? (...args: A) => R
+  : T;
 ```
 
 함수 타입에서 `this` 매개변수를 제거한다.
