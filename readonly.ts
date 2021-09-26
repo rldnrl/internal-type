@@ -13,4 +13,4 @@ const readonlyUser: MyReadonly<User> = {
 };
 
 // !Error. Cannot assign to 'firstName' because it is a read-only property
-// readonlyUser.firstName = "Test First Name"
+readonlyUser.firstName = "Test First Name"
