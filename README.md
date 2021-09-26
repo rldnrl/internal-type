@@ -13,7 +13,11 @@ type Partial<T> = { [P in keyof T]?: T[P]; }
 ### `Required<T>`
 
 ```tsx
-type Required<T> = { [P in keyof T]-?: T[P]; }
+type Required<T extends (...args: any) => any> = T extends (
+  ...args: any
+) => infer R
+  ? R
+  : any;
 ```
 
 T의 모든 프로퍼티가 필수로 설정된 타입을 구성한다.
