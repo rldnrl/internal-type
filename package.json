@@ -5,6 +5,8 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "ts-expect": "^1.3.0",
+    "ts-node": "^10.7.0",
     "tslib": "^2.0.0"
   },
   "devDependencies": {

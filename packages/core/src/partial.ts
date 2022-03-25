@@ -1,4 +1,4 @@
-type MyPartial<T> = { [P in keyof T]?: T[P] };
+export type MyPartial<T> = { [P in keyof T]?: T[P] };
 
 type User = {
   firstName: string;
