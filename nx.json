@@ -1,6 +1,6 @@
 {
   "extends": "@nrwl/workspace/presets/core.json",
-  "npmScope": "ts-internal-utils",
+  "npmScope": "internal-type",
   "affected": {
     "defaultBase": "main"
   },
